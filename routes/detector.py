@@ -3,14 +3,14 @@ from error_handles import forbidden
 from flask import Flask, jsonify, request, render_template
 
 
-@app.route('/get-code', methods=['POST', 'GET'])
+@app.route('/vulnerability-check', methods=['POST', 'GET'])
 def getCode():
     # Sample route with a method handlers and a view function
     try:
         text = request.form['myText']
-        print(text)
-        
-        return text
+        processed_text = text.upper()
+        #print(processed_text)
+        return jsonify({'processed_text': processed_text})
 
     except Exception as e:
         print(e)

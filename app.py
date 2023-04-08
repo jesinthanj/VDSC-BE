@@ -25,7 +25,7 @@ def after_request_func(response):
 import error_handles
 
 # Add your API endpoints here
-from routes import getCode
+from routes import detector
 # from routes import cars
 # ...
 
