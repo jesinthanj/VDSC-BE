@@ -15,9 +15,10 @@ load_dotenv()
 @app.after_request
 def after_request_func(response):
     # CORS section
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    response.headers.add('Access-Control-Allow-Headers', "*")
-    response.headers.add('Access-Control-Allow-Methods', "*")
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = '*'
+    response.headers['Cache-Control'] = 'no-cache'
     return response
 # end CORS section
 
